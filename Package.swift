@@ -7,9 +7,11 @@ let package = Package(
     products: [
         .library(name: "TaxCalculator", targets: ["TaxCalculator"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-nio.git", from: "1.11.0")
+    ],
     targets: [
-        .target(name: "TaxCalculator", dependencies: []),
+        .target(name: "TaxCalculator", dependencies: ["NIO"]),
         .testTarget(name: "TaxCalculatorTests", dependencies: ["TaxCalculator"]),
     ]
 )
