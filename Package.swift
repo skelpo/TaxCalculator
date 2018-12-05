@@ -8,10 +8,11 @@ let package = Package(
         .library(name: "TaxCalculator", targets: ["TaxCalculator"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/vapor/service.git", from: "1.0.0"),
         .package(url: "https://github.com/apple/swift-nio.git", from: "1.11.0")
     ],
     targets: [
-        .target(name: "TaxCalculator", dependencies: ["NIO"]),
+        .target(name: "TaxCalculator", dependencies: ["NIO", "Service"]),
         .testTarget(name: "TaxCalculatorTests", dependencies: ["TaxCalculator"]),
     ]
 )
